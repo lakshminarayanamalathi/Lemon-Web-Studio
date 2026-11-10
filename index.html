@@ -2,275 +2,268 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#101010">
-
-    <title>LEMON WEB STUDIO | Creative Web Design</title>
-
-    <meta name="description" content="LEMON WEB STUDIO creates modern, creative and responsive websites.">
-
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="LEMON WEB STUDIO creates modern, creative and responsive websites for businesses, portfolios and personal projects.">
+  <meta name="theme-color" content="#111111">
+  <title>LEMON WEB STUDIO | Creative Websites</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
+  <header class="header">
+    <a class="logo" href="#home">🍋 LEMON<span>WEB STUDIO</span></a>
 
-    <!-- NAVIGATION -->
-    <header class="header">
-        <a href="#home" class="logo">
-            LEMON<span>.</span>
-        </a>
+    <button class="menu-toggle" id="menuToggle"
+      aria-label="Open navigation" aria-expanded="false">
+      ☰
+    </button>
 
-        <button class="menu-toggle" id="menuToggle"
-                aria-label="Toggle navigation"
-                aria-expanded="false">
-            ☰
-        </button>
+    <nav class="navbar" id="navbar">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#projects">Projects</a>
+      <a class="nav-cta" href="#contact">Start a project</a>
+    </nav>
+  </header>
 
-        <nav class="navbar" id="navbar">
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#services">Services</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact" class="nav-button">Let's Talk ↗</a>
-        </nav>
-    </header>
-
-    <main>
-
-        <!-- HERO -->
-        <section class="hero" id="home">
-
-            <div class="hero-content">
-                <div class="eyebrow">
-                    <span class="status-dot"></span>
-                    CREATIVE DIGITAL STUDIO
-                </div>
-
-                <h1>
-                    WE MAKE<br>
-                    IDEAS LOOK<br>
-                    <span>LEMON FRESH.</span>
-                </h1>
-
-                <p class="hero-description">
-                    We design and build modern digital experiences
-                    that look beautiful, feel smooth and work everywhere.
-                </p>
-
-                <div class="hero-actions">
-                    <a href="#projects" class="button button-yellow">
-                        Explore Our Work ↗
-                    </a>
-
-                    <a href="#about" class="button button-outline">
-                        Discover Us
-                    </a>
-                </div>
-            </div>
-
-            <div class="hero-art">
-                <div class="art-circle">
-                    <div class="lemon-shape">L</div>
-                    <div class="art-caption">THINK FRESH.</div>
-                </div>
-
-                <div class="floating-tag tag-one">CREATIVE</div>
-                <div class="floating-tag tag-two">DIGITAL</div>
-            </div>
-
-            <div class="hero-bottom">
-                <span>DESIGN WITH PURPOSE</span>
-                <span>SCROLL TO EXPLORE ↓</span>
-            </div>
-
-        </section>
-
-        <!-- INTRO STRIP -->
-        <section class="intro-strip">
-            <p>
-                DESIGN <span>✳</span>
-                DEVELOP <span>✳</span>
-                CREATE <span>✳</span>
-                INNOVATE <span>✳</span>
-                DESIGN
-            </p>
-        </section>
-
-        <!-- ABOUT -->
-        <section class="section about" id="about">
-
-            <div class="section-label">01 / ABOUT US</div>
-
-            <div class="about-grid">
-                <h2>
-                    A FRESH<br>
-                    APPROACH TO<br>
-                    <span>THE WEB.</span>
-                </h2>
-
-                <div class="about-text">
-                    <p>
-                        Welcome to LEMON WEB STUDIO.
-                        We believe every great digital experience
-                        begins with a creative idea.
-                    </p>
-
-                    <p>
-                        Our focus is on clean designs, thoughtful
-                        layouts and interactive websites built
-                        with modern web technologies.
-                    </p>
-
-                    <a href="#services" class="text-link">
-                        Discover our services ↗
-                    </a>
-                </div>
-            </div>
-
-        </section>
-
-        <!-- SERVICES -->
-        <section class="section services-section" id="services">
-
-            <div class="section-label">02 / WHAT WE DO</div>
-
-            <div class="section-heading">
-                <h2>OUR <span>SERVICES.</span></h2>
-                <p>Good ideas deserve great websites.</p>
-            </div>
-
-            <div class="service-grid">
-
-                <article class="service-card">
-                    <div class="card-number">01</div>
-                    <div class="service-icon">✳</div>
-                    <h3>Web Design</h3>
-                    <p>
-                        Modern layouts, attractive colours
-                        and beautiful user experiences.
-                    </p>
-                    <span class="card-arrow">↗</span>
-                </article>
-
-                <article class="service-card featured-card">
-                    <div class="card-number">02</div>
-                    <div class="service-icon">⌘</div>
-                    <h3>Web Development</h3>
-                    <p>
-                        Functional websites created with
-                        HTML, CSS and JavaScript.
-                    </p>
-                    <span class="card-arrow">↗</span>
-                </article>
-
-                <article class="service-card">
-                    <div class="card-number">03</div>
-                    <div class="service-icon">▣</div>
-                    <h3>Responsive Design</h3>
-                    <p>
-                        Websites that adapt to desktops,
-                        laptops, tablets and phones.
-                    </p>
-                    <span class="card-arrow">↗</span>
-                </article>
-
-            </div>
-        </section>
-
-        <!-- PROJECTS -->
-        <section class="section projects-section" id="projects">
-
-            <div class="section-label">03 / SELECTED WORK</div>
-
-            <div class="section-heading">
-                <h2>OUR <span>CREATIONS.</span></h2>
-                <p>A few ideas brought to life.</p>
-            </div>
-
-            <div class="project-grid">
-
-                <article class="project-card">
-                    <div class="project-visual project-one">
-                        <span class="project-emoji">☕</span>
-                        <div class="project-preview">
-                            <span>THE DAILY BREW</span>
-                            <strong>GOOD COFFEE.<br>GOOD MOOD.</strong>
-                        </div>
-                    </div>
-                    <div class="project-info">
-                        <div>
-                            <h3>The Daily Brew</h3>
-                            <p>Restaurant website concept</p>
-                        </div>
-                        <span>↗</span>
-                    </div>
-                </article>
-
-                <article class="project-card">
-                    <div class="project-visual project-two">
-                        <span class="project-emoji">✦</span>
-                        <div class="project-preview">
-                            <span>CREATIVE SPACE</span>
-                            <strong>MAKE IT<br>MATTER.</strong>
-                        </div>
-                    </div>
-                    <div class="project-info">
-                        <div>
-                            <h3>Creative Space</h3>
-                            <p>Portfolio website concept</p>
-                        </div>
-                        <span>↗</span>
-                    </div>
-                </article>
-
-            </div>
-
-            <p class="project-note">
-                These are demonstration concepts created for the portfolio.
-            </p>
-
-        </section>
-
-        <!-- CONTACT -->
-        <section class="contact-section" id="contact">
-
-            <div class="section-label">04 / GET IN TOUCH</div>
-
-            <h2>
-                HAVE AN<br>
-                IDEA? LET'S<br>
-                <span>CREATE IT.</span>
-            </h2>
-
-            <p>
-                Great things start with a simple conversation.
-            </p>
-
-            <a href="#home" class="button button-yellow">
-                Back to Top ↑
-            </a>
-
-        </section>
-
-    </main>
-
-    <!-- FOOTER -->
-    <footer class="footer">
-
-        <a href="#home" class="logo">
-            LEMON<span>.</span>
-        </a>
-
-        <p>Fresh ideas. Powerful websites.</p>
-
-        <p class="copyright">
-            © <span id="year"></span> LEMON WEB STUDIO.
-            BUILT WITH CREATIVITY.
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <p class="eyebrow">CREATIVE WEB DESIGN STUDIO</p>
+        <h1>Your idea.<br><span>Our creativity.</span></h1>
+        <p class="hero-description">
+          We turn ideas into beautiful, modern and responsive website designs.
+          Let's create something memorable.
         </p>
+        <div class="hero-buttons">
+          <a href="#services" class="button primary">Explore services</a>
+          <a href="#projects" class="button secondary">View projects</a>
+        </div>
+        <p class="hero-note">Creative ideas deserve a great digital home.</p>
+      </div>
+      <div class="hero-art" aria-label="Creative web design illustration">
+        <div class="art-circle">🍋</div>
+        <div class="art-card">
+          <span class="art-dot"></span>
+          <span class="art-dot"></span>
+          <span class="art-dot"></span>
+          <div class="art-line wide"></div>
+          <div class="art-line"></div>
+          <div class="art-block"></div>
+          <div class="art-lines">
+            <div class="art-line"></div>
+            <div class="art-line short"></div>
+          </div>
+        </div>
+        <span class="floating-tag">DESIGN • CREATE • BUILD</span>
+      </div>
+    </section>
 
-    </footer>
+    <section class="stats">
+      <div><strong>01</strong><span>Creative thinking</span></div>
+      <div><strong>02</strong><span>Responsive design</span></div>
+      <div><strong>03</strong><span>Attention to detail</span></div>
+    </section>
 
-    <script src="script.js"></script>
+    <section class="section about" id="about">
+      <div class="section-heading">
+        <p class="eyebrow">WHO WE ARE</p>
+        <h2>Small studio.<br><span>Big ideas.</span></h2>
+      </div>
+      <div class="about-copy">
+        <p>
+          LEMON WEB STUDIO is a creative web-design project focused on
+          making attractive, easy-to-use and mobile-friendly websites.
+        </p>
+        <p>
+          From simple landing pages to personal portfolios, we believe
+          every website should have its own personality.
+        </p>
+        <a href="#contact" class="text-link">Tell us your idea →</a>
+      </div>
+    </section>
 
+    <section class="section services" id="services">
+      <div class="section-title">
+        <p class="eyebrow">WHAT WE DO</p>
+        <h2>Our <span>services</span></h2>
+        <p>Design solutions for different kinds of ideas.</p>
+      </div>
+
+      <div class="card-grid">
+        <article class="service-card">
+          <div class="card-icon">💻</div>
+          <h3>Business websites</h3>
+          <p>Present a business, its services and important information online.</p>
+          <span class="card-number">01 / DESIGN</span>
+        </article>
+
+        <article class="service-card">
+          <div class="card-icon">🎨</div>
+          <h3>Creative websites</h3>
+          <p>Unique layouts, visual styles and designs built around an idea.</p>
+          <span class="card-number">02 / DESIGN</span>
+        </article>
+
+        <article class="service-card">
+          <div class="card-icon">👤</div>
+          <h3>Portfolio websites</h3>
+          <p>Showcase projects, skills and achievements in one place.</p>
+          <span class="card-number">03 / DESIGN</span>
+        </article>
+
+        <article class="service-card">
+          <div class="card-icon">📱</div>
+          <h3>Responsive websites</h3>
+          <p>Layouts designed to work across phones, tablets and computers.</p>
+          <span class="card-number">04 / DESIGN</span>
+        </article>
+      </div>
+    </section>
+
+    <section class="section pricing" id="pricing">
+      <div class="section-title">
+        <p class="eyebrow">SIMPLE PACKAGES</p>
+        <h2>Choose your <span>plan</span></h2>
+        <p>Example starting prices for planning. Final quotes depend on the project.</p>
+      </div>
+
+      <div class="price-grid">
+        <article class="price-card">
+          <p class="plan-label">STARTER</p>
+          <h3>Basic</h3>
+          <p class="price">₹499 <small>starting example</small></p>
+          <p class="plan-description">For a simple one-page website concept.</p>
+          <ul>
+            <li>One-page layout</li>
+            <li>Basic visual design</li>
+            <li>Mobile-friendly layout</li>
+            <li>One revision</li>
+          </ul>
+          <a href="#contact" class="button secondary choose-plan" data-plan="Basic">Choose Basic</a>
+        </article>
+
+        <article class="price-card featured">
+          <span class="popular">POPULAR</span>
+          <p class="plan-label">PROFESSIONAL</p>
+          <h3>Standard</h3>
+          <p class="price">₹1,499 <small>starting example</small></p>
+          <p class="plan-description">For a multi-section website with more detail.</p>
+          <ul>
+            <li>Up to three pages</li>
+            <li>Custom visual styling</li>
+            <li>Responsive layout</li>
+            <li>Two revisions</li>
+          </ul>
+          <a href="#contact" class="button primary choose-plan" data-plan="Standard">Choose Standard</a>
+        </article>
+
+        <article class="price-card">
+          <p class="plan-label">ADVANCED</p>
+          <h3>Premium</h3>
+          <p class="price">₹2,999 <small>starting example</small></p>
+          <p class="plan-description">For a more customised website concept.</p>
+          <ul>
+            <li>Up to five pages</li>
+            <li>Custom design elements</li>
+            <li>Responsive layout</li>
+            <li>Three revisions</li>
+          </ul>
+          <a href="#contact" class="button secondary choose-plan" data-plan="Premium">Choose Premium</a>
+        </article>
+      </div>
+      <p class="pricing-note">
+        Prices are illustrative, not confirmed offers. Final scope, costs,
+        hosting and delivery arrangements must be agreed with a parent or guardian.
+      </p>
+    </section>
+
+    <section class="section projects" id="projects">
+      <div class="section-title">
+        <p class="eyebrow">OUR CREATIVE CORNER</p>
+        <h2>Featured <span>concepts</span></h2>
+        <p>Sample design concepts showing the kind of websites we can explore.</p>
+      </div>
+
+      <div class="project-grid">
+        <article class="project-card">
+          <div class="project-visual project-one">
+            <span>URBAN</span>
+            <strong>COFFEE</strong>
+            <small>FRESHLY BREWED IDEAS</small>
+          </div>
+          <div class="project-info">
+            <div><h3>Coffee shop concept</h3><p>Business website design</p></div>
+            <span>01</span>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-visual project-two">
+            <span>YOUR NEXT</span>
+            <strong>ADVENTURE</strong>
+            <small>TRAVEL • EXPLORE • DISCOVER</small>
+          </div>
+          <div class="project-info">
+            <div><h3>Travel website concept</h3><p>Creative landing page</p></div>
+            <span>02</span>
+          </div>
+        </article>
+      </div>
+      <p class="pricing-note">These are demonstration concepts, not completed client projects.</p>
+    </section>
+
+    <section class="section contact" id="contact">
+      <div class="contact-intro">
+        <p class="eyebrow">HAVE AN IDEA?</p>
+        <h2>Let's make<br><span>it happen.</span></h2>
+        <p>Tell us a little about the website you have in mind.</p>
+      </div>
+
+      <form class="contact-form" id="contactForm">
+        <label for="visitorName">Your name</label>
+        <input id="visitorName" name="name" type="text"
+          placeholder="Enter your name" maxlength="60" required>
+
+        <label for="projectType">Website type</label>
+        <select id="projectType" name="type" required>
+          <option value="">Choose a project type</option>
+          <option>Business website</option>
+          <option>Portfolio website</option>
+          <option>Creative website</option>
+          <option>Other idea</option>
+        </select>
+
+        <label for="projectBudget">Package of interest</label>
+        <select id="projectBudget" name="budget">
+          <option value="Not sure yet">Not sure yet</option>
+          <option value="Basic">Basic</option>
+          <option value="Standard">Standard</option>
+          <option value="Premium">Premium</option>
+        </select>
+
+        <label for="projectMessage">Describe your idea</label>
+        <textarea id="projectMessage" name="message"
+          placeholder="What would you like your website to do?"
+          rows="5" maxlength="1000" required></textarea>
+
+        <button class="button primary submit-button" type="submit">
+          Preview enquiry
+        </button>
+        <p class="form-notice" id="formNotice" role="status" aria-live="polite">
+          This is a demonstration form. It does not send or store your information.
+        </p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <a class="logo footer-logo" href="#home">🍋 LEMON<span>WEB STUDIO</span></a>
+    <p>Creative ideas. Thoughtful design.</p>
+    <p class="copyright">© <span id="year"></span> LEMON WEB STUDIO. All rights reserved.</p>
+  </footer>
 </body>
 </html>
