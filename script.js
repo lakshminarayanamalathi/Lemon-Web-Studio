@@ -1,16 +1,24 @@
 
+/*
+  LEMON WEB STUDIO
+  Website interactions and enquiry form
+*/
+
+// Replace this URL after deploying the Python backend on Render.
+const API_BASE_URL = "https://YOUR-RENDER-SERVICE.onrender.com";
+
 const menuToggle = document.getElementById("menuToggle");
 const navbar = document.getElementById("navbar");
 const year = document.getElementById("year");
 const contactForm = document.getElementById("contactForm");
 const formNotice = document.getElementById("formNotice");
 
-// Automatically update the copyright year.
+// Copyright year
 if (year) {
   year.textContent = new Date().getFullYear();
 }
 
-// Mobile navigation.
+// Mobile navigation
 if (menuToggle && navbar) {
   menuToggle.addEventListener("click", () => {
     const isOpen = navbar.classList.toggle("open");
@@ -28,60 +36,104 @@ if (menuToggle && navbar) {
     link.addEventListener("click", () => {
       navbar.classList.remove("open");
       menuToggle.setAttribute("aria-expanded", "false");
-      menuToggle.setAttribute("aria-label", "Open navigation");
       menuToggle.textContent = "☰";
     });
   });
 }
 
-// Select a package from the pricing section.
+// Pricing buttons
 document.querySelectorAll(".choose-plan").forEach((button) => {
   button.addEventListener("click", () => {
-    const selectedPlan = button.dataset.plan;
-    const budgetField = document.getElementById("projectBudget");
+    const budget = document.getElementById("projectBudget");
 
-    if (budgetField && selectedPlan) {
-      budgetField.value = selectedPlan;
+    if (budget && button.dataset.plan) {
+      budget.value = button.dataset.plan;
     }
   });
 });
 
-// Project enquiry demonstration form.
-// This validates and previews the information locally.
-// It does NOT transmit or store visitor information.
-if (contactForm) {
-  contactForm.addEventListener("submit", (event) => {
+// Enquiry form
+if (contactForm && formNotice) {
+  contactForm.addEventListener("submit", async (event) => {
     event.preventDefault();
 
-    if (!contactForm.reportValidity()) {
-      return;
-    }
+    if (!contactForm.reportValidity()) return;
+
+    const button = contactForm.querySelector(
+      'button[type="submit"]'
+    );
 
     const formData = new FormData(contactForm);
 
-    const name = String(formData.get("name") || "").trim();
-    const type = String(formData.get("type") || "").trim();
-    const budget = String(formData.get("budget") || "").trim();
-    const message = String(formData.get("message") || "").trim();
+    const enquiry = {
+      name: String(formData.get("name") || "").trim(),
+      project: String(formData.get("type") || "").trim(),
+      budget: String(formData.get("budget") || "Not sure yet").trim(),
+      message: String(formData.get("message") || "").trim()
+    };
 
-    if (!name || !type || !message) {
-      formNotice.textContent = "Please complete all required fields.";
+    if (
+      !enquiry.name ||
+      !enquiry.project ||
+      !enquiry.message
+    ) {
+      formNotice.textContent =
+        "Please complete all required fields.";
       return;
     }
 
-    formNotice.textContent =
-      "Enquiry preview created! This is only a demo: no information was sent or saved. A secure, adult-managed contact system must be connected before accepting real enquiries.";
+    if (API_BASE_URL.includes("YOUR-RENDER-SERVICE")) {
+      formNotice.textContent =
+        "Our enquiry service is not online yet.";
+      return;
+    }
 
-    formNotice.classList.add("success-message");
+    if (button) {
+      button.disabled = true;
+      button.textContent = "Sending...";
+    }
 
-    console.log("LEMON WEB STUDIO enquiry preview:", {
-      name,
-      type,
-      budget,
-      message
-    });
+    formNotice.textContent = "Sending your enquiry...";
+
+    try {
+      const response = await fetch(
+        `${API_BASE_URL}/api/enquiry`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(enquiry)
+        }
+      );
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(
+          result.error || "Unable to send your enquiry."
+        );
+      }
+
+      formNotice.textContent =
+        result.message || "Enquiry sent successfully!";
+
+      formNotice.classList.add("success-message");
+      contactForm.reset();
+
+    } catch (error) {
+      formNotice.classList.remove("success-message");
+
+      formNotice.textContent =
+        error.message || "Please try again later.";
+
+    } finally {
+      if (button) {
+        button.disabled = false;
+        button.textContent = "Send enquiry";
+      }
+    }
   });
 }
 
-// Small welcome message in the developer console.
-console.log("🍋 LEMON WEB STUDIO is ready!");
+console.log("LEMON WEB STUDIO is ready!");
